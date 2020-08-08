@@ -4,7 +4,7 @@
 
 **Obrázek:**
  
-image::img2.jpg[]
+image::img/documentation/Result.jpg[]
  
 **Datum vydání:** 9. 1. 20
 
@@ -33,7 +33,7 @@ Pomocí ikonek **„Play“** a **„Stop“** (příp. klávesami **Enter** a *
 
 Pro tuto část je důležité zmínit, že všechny obrázky jsou do aplikace automaticky načítány (a přednačítány!) z **uživatelské obrázkové složky** (tj. „/user/images/“). Aplikace si všechny obrázky **ukládá** a načítá je pouze při jejich **prvním zobrazení** (obrázky se tedy nenačítají stále dokola). Navíc umí **reagovat na změnu FS** (tj. filesystemu). Pokud do zmíněné složky přidáme další obrázek, aplikace jej okamžitě načte a zaktualizuje se (podobně se chová i při odebírání obrázků). V případě, že se ve složce žádný obrázek nenachází, to oznámí uživateli. 
 
-image::SAGE/img/documentation/Presentation.jpg[]
+image::img/documentation/Presentation.jpg[]
 
 == **Editor**
 
@@ -43,19 +43,19 @@ V **levém** panelu se nachází všechny snímky, které prezentace obsahuje. P
 
 V **pravém** panelu se nachází **miniatura** promítaného obrázku, jeho **rozlišení**, dále **název**, **formát**, **velikost** (v MB) a **datum a čas vyfocení**.
 
-image::img2.jpg[]
+image::img/documentation/Result.jpg[]
 
 == **Nastavení**
 
 Do **nastavení** se dostaneme pomocí ikonky **„Settings“** (příp. klávesy **S**). V této části aplikace lze nastavit **přechody**, které bude prezentace mít. Na výběr je **bez přechodu**, **s plynulým přechodem**, **zleva doprava** a **shora dolů**. Kromě toho je možné si snímky **seřadit** podle již zmíněných obrázkových informací (tedy **názvu**, **formátu** atd.), a to jak vzestupně, tak sestupně. Stačí jen na některou z položek kliknout a daná funkcionalita se ihned projeví. Vlastní řazení se nastavuje automaticky, pokud se uživatel rozhodne seznam snímků upravit podle svého (pomocí již zmíněných šipek **nahoru** a **dolů** nebo klávesy **Delete**).
 
-image::SAGE/img/documentation/Settings.jpg[]
+image::img/documentation/Settings.jpg[]
 
 == **Nápověda**
 
 Nejdůležitější část se uživateli zpřístupní pomocí ikonky **„Help“** (příp. klavesy **H**). Zobrazí se nápověda, která obsahuje **seznam kláves a jejich funkcí**. Uživatel se tak nemusí omezovat jen na ikonky. Může se naučit celý program rychleji ovládat a vyzkoušet všechny funkcionality, které nabízí.
 
-image::SAGE/img/documentation/Help.jpg[]
+image::img/documentation/Help.jpg[]
 
 == **Program**
 
@@ -201,7 +201,7 @@ __isMouseInBottomPanel()__ – rozsvěcuje a zhasíná ikonky v průběhu prezen
 
 Jako ukázku jsem si vybral úryvek kódu, který řeší **promítání jednotlivých snímků bez přechodu**. Jedná se o základ samotné prezentace, a tedy i této aplikace. Nejdříve se zaktualizuje promítaný obrázek a informace o něm. Po určité časové prodlevě se nastaví další obrázek, zvýrazní se následující položka v seznamu snímků a celý proces se opakuje.
 
-image::SAGE/img/documentation/Transition.jpg[]
+image::img/documentation/Transition.jpg[]
 
 == **Návrhy na vylepšení**
 
