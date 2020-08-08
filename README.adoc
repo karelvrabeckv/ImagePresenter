@@ -1,0 +1,220 @@
+== **Základní informace**
+
+**Název:** Prezentační nástroj 1
+
+**Obrázek:**
+ 
+image::img2.jpg[]
+ 
+**Datum vydání:** 9. 1. 20
+
+**Doba vývoje:** 14 dní (s přestávkami v listopadu, prosinci a v lednu)
+
+**Programovací jazyk:** JavaScript (s podporou knihovny jQuery)
+
+**Platforma:** SAGE2
+
+**Instalace**: Přetáhnutí ZIP archivu __image_presenter.zip__ do okna SAGE2 serveru
+
+**Spuštění**: Dvojité kliknutí na ikonku __App Launcher > Image Presenter__
+
+== **Popis**
+
+**Prezentační nástroj 1** je aplikace pro platformu SAGE2, která umožňuje prohlížet a různými způsoby prezentovat množinu obrázků. Cílí především na **prezentování jako takové** (např. jednotlivé snímky lze seřadit a nastavit jim přechody) a na vytvoření **uživatelsky přívětivého prostředí** (např. spodní klikatelné ikonky, které uživatele zavedou do dalších částí programu). Aplikace se skládá ze čtyř částí:
+
+*** prezentace,
+*** editor,
+*** nastavení,
+*** nápověda.
+
+== **Prezentace**
+
+Pomocí ikonek **„Play“** a **„Stop“** (příp. klávesami **Enter** a **P**) lze spustit či zastavit **prezentaci** obrázků. Uživatel si ji navíc může různými způsoby přizpůsobit. Skrze klávesy **+** a **–** může ovlivňovat dobu, po kterou jsou jednotlivé snímky vidět (interval 1–30 sekund). Po celou dobu je k dispozici neviditelný **informační box** nad spodními ikonkami, který komentuje uživatelovy akce (např. po stisknutí klávesy **Enter** se objeví nápis **„Spuštění prezentace“** atp.). Ostatní funkcionality si lze přečíst v částech **Editor** a **Nastavení**.
+
+Pro tuto část je důležité zmínit, že všechny obrázky jsou do aplikace automaticky načítány (a přednačítány!) z **uživatelské obrázkové složky** (tj. „/user/images/“). Aplikace si všechny obrázky **ukládá** a načítá je pouze při jejich **prvním zobrazení** (obrázky se tedy nenačítají stále dokola). Navíc umí **reagovat na změnu FS** (tj. filesystemu). Pokud do zmíněné složky přidáme další obrázek, aplikace jej okamžitě načte a zaktualizuje se (podobně se chová i při odebírání obrázků). V případě, že se ve složce žádný obrázek nenachází, to oznámí uživateli. 
+
+image::SAGE/img/documentation/Presentation.jpg[]
+
+== **Editor**
+
+Kliknutím na prostřední ikonku **„Edit“** (příp. stisknutím klávesy **E**) se spustí **editor** a objeví se levý a pravý panel.
+
+V **levém** panelu se nachází všechny snímky, které prezentace obsahuje. Pomocí šipek **doleva** a **doprava** se lze mezi těmito snímky libovolně přepínat (pro rychlejší přístup je možné přes seznam snímků scrollovat a klikat na ty, které chceme zobrazit). Šipky **nahoru** a **dolů** zase jednotlivé snímky prohazují a pomocí klávesy **Delete** je lze i mazat.
+
+V **pravém** panelu se nachází **miniatura** promítaného obrázku, jeho **rozlišení**, dále **název**, **formát**, **velikost** (v MB) a **datum a čas vyfocení**.
+
+image::img2.jpg[]
+
+== **Nastavení**
+
+Do **nastavení** se dostaneme pomocí ikonky **„Settings“** (příp. klávesy **S**). V této části aplikace lze nastavit **přechody**, které bude prezentace mít. Na výběr je **bez přechodu**, **s plynulým přechodem**, **zleva doprava** a **shora dolů**. Kromě toho je možné si snímky **seřadit** podle již zmíněných obrázkových informací (tedy **názvu**, **formátu** atd.), a to jak vzestupně, tak sestupně. Stačí jen na některou z položek kliknout a daná funkcionalita se ihned projeví. Vlastní řazení se nastavuje automaticky, pokud se uživatel rozhodne seznam snímků upravit podle svého (pomocí již zmíněných šipek **nahoru** a **dolů** nebo klávesy **Delete**).
+
+image::SAGE/img/documentation/Settings.jpg[]
+
+== **Nápověda**
+
+Nejdůležitější část se uživateli zpřístupní pomocí ikonky **„Help“** (příp. klavesy **H**). Zobrazí se nápověda, která obsahuje **seznam kláves a jejich funkcí**. Uživatel se tak nemusí omezovat jen na ikonky. Může se naučit celý program rychleji ovládat a vyzkoušet všechny funkcionality, které nabízí.
+
+image::SAGE/img/documentation/Help.jpg[]
+
+== **Program**
+
+Kód aplikace je rozdělen do několika souborů:
+
+* __image_presenter.js__,
+** hlavní kód a veškeré funkcionality
+
+* __image_presenter.css__,
+** kaskádové styly veškerých HTML prvků
+
+* __instructions.json__,
+** základní konfigurace aplikace
+
+* __jquery-3.4.1.min.js__,
+** knihovna jQuery
+
+* __jquery-ui.min.js__.
+** rozšíření knihovny jQuery umožňující používat animované efekty
+
+Hlavní javascriptový kód se skládá z následujích částí/funkcí:
+
+**Hlavní funkce**
+
+__init()__, __load()__, __draw()__, __resize()__, __move()__, __event()__, __quit()__ – základní funkce aplikace
+
+
+**GUI**
+
+__createGUI()__ – vytvoří kompletní GUI
+
+__createLeftPanel()__ – vytvoří levý panel se snímky
+
+__createRightPanel()__ – vytvoří pravý panel s informacemi o obrázku
+
+__createBottomPanel()__ – vytvoří spodní panel s ikonkami
+
+__createSettingsAndHelp()__ – vytvoří nastavení a nápovědu
+
+__createInfobox()__ – vytvoří informační box pro uživatele
+
+
+**Načítání obrázků**
+
+__loadImages()__ – načte veškeré obrázky z uživatelské složky a reaguje na změny FS
+
+
+**Řazení**
+
+__sortSlides()__ – seřadí snímky podle zvoleného typu
+
+__sortByName()__ – seřadí snímky podle názvu
+
+__sortByType()__ – seřadí snímky podle formátu
+
+__sortBySize()__ – seřadí snímky podle velikosti
+
+__sortByCreationDate()__ – seřadí snímky podle data a času vyfocení
+
+__sortByResolution()__ – seřadí snímky podle rozlišení
+
+
+**Přechody**
+
+__nextImageNoMode()__ – nastaví okamžité přechody
+
+__nextImageFadeMode()__ – nastaví plynulé přechody
+
+__nextImageLeftToRight()__ – nastaví vodorovné přechody
+
+__nextImageTopToBottom()__ – nastaví svislé přechody
+
+
+**Prezentace**
+
+__refreshAll()__ – aktualizuje obrázek a informace o něm
+
+__setSlide()__ – nastaví daný snímek
+
+__deleteSlide()__ – smaže daný snímek
+
+__setPreviousSlide()__ – nastaví předchozí snímek
+
+__setNextSlide()__ – nastaví následující snímek
+
+__highlightPreviousItem()__ – zvýrazní předchozí položku v seznamu snímků
+
+__highlightNextItem()__ – zvýrazní následující položku v seznamu snímků
+
+__swapSlidesAbove()__ – prohodí snímky výše
+
+__swapSlidesBelow()__ – prohodí snímky níže
+
+__swapSlides()__ – způsobí samotné prohození
+
+__increaseSlideshowInterval()__ – zvýší časový interval procházení snímků
+
+__decreaseSlideshowInterval()__ – sníží časový interval procházení snímků
+
+__startPresentation()__ – zapne prezentaci
+
+__stopPresentation()__ – vypne prezentaci s oznámením
+
+__stopSlideshow()__ – vypne prezentaci bez oznámení
+
+__setInfobox()__ – nastaví obsah informačního boxu pro uživatele
+
+
+**Editor, nastavení, nápověda**
+
+__openOrCloseEditor()__ – zapne/vypne editor
+
+__openOrCloseSettings()__ – zapne/vypne nastavení
+
+__openOrCloseHelp()__ – zapne/vypne nápovědu
+
+
+**Klikání**
+
+__checkBottomPanelIcons()__ – kontroluje klikání na spodní panel s ikonkami
+
+__bottomPanelIconClick()__ – reaguje na kliknutí na některou z ikonek
+
+__checkLeftPanelItems()__ – kontroluje klikání na levý panel se snímky
+
+__checkSettingsItems()__ – kontroluje klikání na položky v nastavení
+
+
+**Scrollování**
+
+__checkScrolling()__ – kontroluje scrollování levého panelu při různých operacích
+
+__isMouseInLeftPanel()__ – kontroluje lokaci myši v levém panelu
+
+__moveWithListOfImages()__ – pohybuje s levým panelem při scrollování
+
+
+**Pohyb s myší**
+
+__isMouseInBottomPanel()__ – rozsvěcuje a zhasíná ikonky v průběhu prezentace
+
+== **Ukázka**
+
+Jako ukázku jsem si vybral úryvek kódu, který řeší **promítání jednotlivých snímků bez přechodu**. Jedná se o základ samotné prezentace, a tedy i této aplikace. Nejdříve se zaktualizuje promítaný obrázek a informace o něm. Po určité časové prodlevě se nastaví další obrázek, zvýrazní se následující položka v seznamu snímků a celý proces se opakuje.
+
+image::SAGE/img/documentation/Transition.jpg[]
+
+== **Návrhy na vylepšení**
+
+**1.** Aplikace by v budoucnosti mohla načítat obrázky i z **jiných složek** než jen z výše zmíněné. Mezi spodními ikonkami by tak byla ikonka další s obrázkem složky, která by zobrazila seznam všech složek ve FS, kde se nachází **alespoň jeden obrázek**. Uživatel by pak tuto složku (příp. jednotlivé obrázky) zvolil a prezentace by se tak skládala z naprosto libovolných obrázků. Z časových důvodů se nestihlo tuto funkcionalitu naimplementovat v této (základní) verzi aplikace.
+
+**2.** Pokud si uživatel snímky v prezentaci libovolně seřadí (příp. promaže) a dojde ke **změně FS** (tedy přidá se / odebere nějaký soubor), pak si aplikace všechny obrázky načte znovu (bez seřazení). To znamená, že veškeré uživatelovy úpravy budou ztraceny. Řešením je průběžně ukládat stavy prezentace (např. pomocí JSON), aby nenastala tato situace a ke všemu se uživatel mohl ke svým úpravám někdy v budoucnosti vrátit. I to je předmětem dalšího rozvoje aplikace.
+
+Jelikož jsou oba tyto body v předmětu PGA již řešeny jinými podobnými pracemi, rozhodl jsem se na ně příliš nesoustředit a cílit zejména na **prezentování jako takové** a **GUI**. 
+
+== **Reference**
+
+http://sage2.sagecommons.org/
+
+https://bitbucket.org/sage2/sage2/wiki/Home
+
+https://stackoverflow.com/

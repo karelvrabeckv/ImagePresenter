@@ -1,0 +1,227 @@
+*
+{
+	font-family: Century Gothic, Trebuchet MS, Verdana, Arial;
+}
+
+ul
+{
+	position: relative;
+	width: 100%;
+	padding: 0;
+	list-style-type: none;
+	background-color: #211D17;
+	border-bottom: 10px solid #444;
+	overflow: hidden;
+}
+
+li
+{
+	padding: 50px;
+}
+
+#slideshow_img
+{
+	position: relative;
+	z-index: 0;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+#slideshow_ibox
+{
+	position: absolute;
+	bottom: 500px;
+	z-index: 3;
+	display: none;
+	width: 100%;
+	text-align: center;
+	text-shadow: 10px 10px 5px #000;
+	color: #FFF;
+	font-size: 110px;
+}
+
+#slideshow_lp, #slideshow_rp
+{
+	position: absolute;
+	display: none;
+	z-index: 1;
+	width: 25%;
+	height: 100%;
+	color: #D3CEC7;
+	background-color: #1A1712;
+}
+
+#slideshow_lp
+{
+	left: 0;
+	border-right: 10px solid #444;
+}
+
+#slideshow_rp
+{
+	right: 0;
+	border-left: 10px solid #444;
+}
+
+#slideshow_lp_content
+{
+	position: relative;
+	display: none;
+	font-size: 110px;
+	text-align: center;
+}
+
+.current
+{
+	background-color: #312D28 !important;
+}
+
+#slideshow_rp_content
+{
+	position: relative;
+	top: 50%;
+	display: none;
+	transform: translateY(-50%);
+	font-size: 110px;
+	text-align: center;
+}
+
+#rp_img_box_img
+{
+	margin: 0 50px;
+}
+
+#rp_img
+{
+	display: block;
+	max-width: 100%;
+	max-height: 1080px;
+	margin: 50px auto;
+}
+
+#rp_img_resolution
+{
+	display: block;
+	font-size: 90px;
+	font-style: italic;
+}
+
+#rp_img_box_info
+{
+	padding: 50px;
+	margin-top: 50px;
+	border-top: 10px solid #444;
+	border-bottom: 10px solid #444;
+	background-color: #211D17;
+}
+
+.rp_containers
+{
+	display: block;
+	margin-bottom: 50px;
+	text-align: left;
+}
+
+.rp_containers:last-child
+{
+	margin-bottom: 0;
+}
+
+.rp_labels
+{
+	color: #DEB887;
+	font-weight: bold;
+}
+
+#slideshow_bp
+{
+	position: absolute;
+	bottom: 0;
+	z-index: 3;
+	width: 100%;
+	text-align: center;
+}
+
+#slideshow_bp_content
+{
+	display: inline-block;
+	opacity: 0.9;
+}
+
+.bp_img
+{
+	width: 400px;
+	margin: 0 50px 50px 0;
+}
+
+.bp_img:last-child
+{
+	margin-right: 0;
+}
+
+#settings, #help
+{
+	position: absolute;
+	display: none;
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+	color: #D3CEC7;
+	background-color: #1A1712;
+	font-size: 110px;
+	text-align: center;
+}
+
+#settings h2, #help h2
+{
+	margin: 150px 0;
+	font-size: 180px;
+	color: #DEB887;
+	text-align: center;
+}
+
+#ul_box
+{
+	display: flex;
+	justify-content: space-evenly;
+}
+
+#ul_box_item_1, #ul_box_item_2, #ul_box_item_3
+{
+	width: 30%;	
+}
+
+#settings ul
+{
+	border: 10px solid #444;
+}
+
+#settings span
+{
+	display: block;
+	margin-bottom: 50px;
+	color: #DEB887;
+	font-weight: bold;
+}
+
+#help ul
+{
+	border-top: 10px solid #444;
+}
+
+#help li
+{
+	display: flex;
+	align-items: center;
+	padding: 20px;
+}
+
+#help li:nth-child(odd)
+{
+	background: #312D28;
+}
+
+#help span
+{
+	width: 50%;	
+}

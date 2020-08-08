@@ -1,0 +1,22 @@
+{
+	"main_script": "image_presenter.js",
+	"icon": "image_presenter.png",
+	"width": 5760,
+	"height": 3240,
+	"resize": "free",
+	"animation": true,
+	"dependencies": [
+		  "scripts/jquery-3.4.1.min.js",
+		  "scripts/jquery-ui.min.js",
+		  "image_presenter.css"
+	],
+	"load": {
+		"value": 1
+	},
+	"title": "Image Presenter",
+	"version": "1.0.0",
+	"description": "SAGE2 Application for Image Presenting",
+	"keywords": ["sage2", "image", "presenter"],
+	"author": "Karel Vrabec <vrabekar@fit.cvut.cz>",
+	"license": "SAGE2-Software-License"
+}
